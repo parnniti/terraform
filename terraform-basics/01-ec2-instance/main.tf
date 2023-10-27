@@ -18,6 +18,6 @@ resource "aws_instance" "ec2demo" {
   subnet_id = "subnet-04c454d12b060d866"
   user_data = file("${path.module}/script.sh")
   tags = {
-    Name = "ec2-demo"
+    Name = "ec2demo"
   }
 }
