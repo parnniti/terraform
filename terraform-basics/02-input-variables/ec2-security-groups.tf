@@ -1,5 +1,4 @@
-resource "aws_security_group" "vpc-ssh" {
-  name        = "sg-ssh"
+resource "aws_security_group" "sg-ssh" {
   description = "Allow ingress port 22"
 
   ingress {
@@ -24,8 +23,7 @@ resource "aws_security_group" "vpc-ssh" {
   }
 }
 
-resource "aws_security_group" "vpc-web" {
-  name        = "sg-web"
+resource "aws_security_group" "sg-web" {
   description = "Allow ingress application ports"
 
   ingress {
