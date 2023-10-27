@@ -15,5 +15,3 @@ resource "aws_instance" "ec2demo" {
     ami = "ami-06018068a18569ff2"
     instance_type = "t2.micro"
 }
-
-tes
