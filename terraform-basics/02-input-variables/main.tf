@@ -16,7 +16,6 @@ resource "aws_instance" "ec2demo" {
   ami = "ami-06018068a18569ff2"
   instance_type = var.ec2_instance_type
   subnet_id = "subnet-04c454d12b060d866"
-  user_data = file("${path.module}/script.sh")
   tags = {
     Name = "ec2demo"
   }
