@@ -4,6 +4,12 @@ variable aws_region {
   description = "AWS region"
 }
 
+variable aws_profile {
+  type        = string
+  default     = "ChaiyoPowerUserRole"
+  description = "AWS Profile"
+}
+
 variable chaiyo_nonprod_vpc {
   type = string
   default = "vpc-03b499e504dc4838e"
@@ -26,10 +32,4 @@ variable ec2_instance_keypair {
   type        = string
   default     = "terraform-key"
   description = "AWS EC2 key pair that will be associated"
-}
-
-variable aws_profile {
-  type        = string
-  default     = "ChaiyoPowerUserRole"
-  description = "AWS Profile"
 }
