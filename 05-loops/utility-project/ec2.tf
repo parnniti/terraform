@@ -1,11 +1,3 @@
-data "aws_availability_zones" "myaz" {
-  state = "available"
-  filter {
-    name   = "opt-in-status"
-    values = ["opt-in-not-required"]
-  }
-}
-
 resource "aws_instance" "ec2demo" {
   subnet_id = var.ec2_subnet_id
   ami = data.aws_ami.amzn2.id
