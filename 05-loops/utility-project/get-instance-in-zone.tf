@@ -15,7 +15,7 @@ data "aws_ec2_instance_type_offerings" "my_instance_types" {
     for_each = toset(data.aws_availability_zones.myaz.names)
     filter {
         name   = "instance-type"
-        values = var.ec2_instance_type_list
+        values = [var.ec2_instance_type]
     }
 
     filter {

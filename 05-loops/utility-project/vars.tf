@@ -33,19 +33,3 @@ variable ec2_instance_keypair {
   default     = "terraform-key"
   description = "AWS EC2 key pair that will be associated"
 }
-
-variable ec2_instance_type_list {
-  type = list(string)
-  description = "List of AWS EC2 instance types"
-  default = ["t3.micro", "t3.small", "t3.medium"]
-}
-
-variable ec2_instance_type_map {
-  type = map(string)
-  description = "Map of AWS EC2 instance type"
-  default = {
-    "dev" = "t3.micro"
-    "qa" = "t3.small"
-    "prod" = "t3.medium"
-  }
-}
