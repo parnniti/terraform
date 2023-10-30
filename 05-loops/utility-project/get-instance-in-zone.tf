@@ -5,6 +5,10 @@ data "aws_availability_zones" "myaz" {
         name = "region-name"
         values = [var.aws_region]
     }
+    filter {
+        name   = "opt-in-status"
+        values = ["opt-in-not-required"]
+    }
 }
 
 data "aws_ec2_instance_type_offerings" "my_instance_types" {
