@@ -17,7 +17,7 @@ resource "aws_instance" "ec2demo" {
   user_data = file("${path.module}/script.sh")
 
   # count = 3
-  foreach = tpset(data.aws_availability_zones.myaz.names)
+  foreach = toset(data.aws_availability_zones.myaz.names)
   availability_zone = each.key
 
   tags = {
