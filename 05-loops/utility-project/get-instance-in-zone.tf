@@ -27,5 +27,5 @@ output "output_az" {
 }
 
 output "output_v1_1" {
-    value = data.aws_ec2_instance_type_offerings.my_instance_type1.instance_types
+    value = toset(data.aws_ec2_instance_type_offerings.my_instance_type1.instance_types)
 }
