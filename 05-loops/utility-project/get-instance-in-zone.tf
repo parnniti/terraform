@@ -1,4 +1,12 @@
 # Datasource
+data "aws_availability_zones" "myaz" {
+  state = "available"
+  filter {
+    name = "region-name"
+    values = [var.aws_region]
+  }
+}
+
 data "aws_ec2_instance_type_offerings" "my_instance_type1" {
   filter {
     name   = "instance-type"
@@ -14,6 +22,10 @@ data "aws_ec2_instance_type_offerings" "my_instance_type1" {
 }
 
 # Output
+output "output_az" {
+    value = data.aws_availability_zones.myaz
+}
+
 output "output_v1_1" {
     value = data.aws_ec2_instance_type_offerings.my_instance_type1.instance_types
 }
