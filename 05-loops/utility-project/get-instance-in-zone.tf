@@ -15,7 +15,7 @@ data "aws_ec2_instance_type_offerings" "my_instance_type1" {
 
   filter {
     name   = "location"
-    values = ["${var.aws_region}a"]
+    values = data.aws_availability_zones.myaz.names
   }
 
   location_type = "availability-zone"
@@ -23,7 +23,7 @@ data "aws_ec2_instance_type_offerings" "my_instance_type1" {
 
 # Output
 output "output_az" {
-    value = data.aws_availability_zones.myaz
+    value = data.aws_availability_zones.myaz.names
 }
 
 output "output_v1_1" {
