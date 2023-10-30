@@ -28,5 +28,5 @@ output "output_az" {
 }
 
 output "output_instance_types" {
-    value = {for az, instance_type in data.aws_ec2_instance_type_offerings.my_instance_types: az => instance_type}
+    value = {for az, data in data.aws_ec2_instance_type_offerings.my_instance_types: az => data.instance_types}
 }
