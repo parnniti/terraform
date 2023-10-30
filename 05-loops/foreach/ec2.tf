@@ -16,7 +16,7 @@ resource "aws_instance" "ec2demo" {
   key_name = var.ec2_instance_keypair
   user_data = file("${path.module}/script.sh")
 
-  foreach = toset(data.aws_availability_zones.myaz.names)
+  for_each = toset(data.aws_availability_zones.myaz.names)
   availability_zone = each.key
 
   tags = {
