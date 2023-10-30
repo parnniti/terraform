@@ -37,3 +37,10 @@ output "output_instance_types" {
             az => data.instance_types if length(data.instance_types) != 0
     }
 }
+
+output "supported_az_list" {
+    value = keys({
+        for az, data in data.aws_ec2_instance_type_offerings.my_instance_types:
+            az => data.instance_types if length(data.instance_types) != 0
+    })
+}
