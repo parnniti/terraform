@@ -1,4 +1,5 @@
 resource "aws_security_group" "sg-ssh" {
+  vpc_id      = var.chaiyo_nonprod_vpc
   description = "Allow ingress port 22"
 
   ingress {
@@ -24,6 +25,7 @@ resource "aws_security_group" "sg-ssh" {
 }
 
 resource "aws_security_group" "sg-web" {
+  vpc_id      = var.chaiyo_nonprod_vpc
   description = "Allow ingress application ports"
 
   ingress {

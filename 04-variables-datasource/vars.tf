@@ -4,6 +4,12 @@ variable aws_region {
   description = "AWS region"
 }
 
+variable chaiyo_nonprod_vpc {
+  type = string
+  default = "vpc-03b499e504dc4838e"
+  description = "chaiyo-nonprod-vpc"
+}
+
 variable ec2_instance_type {
   type        = string
   default     = "t2.medium"
