@@ -16,7 +16,7 @@ data "aws_ec2_instance_type_offerings" "my_instance_types" {
 
     filter {
         name   = "location"
-        values = each.key
+        values = [each.value]
     }
 
     location_type = "availability-zone"
