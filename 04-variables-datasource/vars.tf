@@ -10,6 +10,12 @@ variable chaiyo_nonprod_vpc {
   description = "chaiyo-nonprod-vpc"
 }
 
+variable ec2_subnet_id {
+  type = string
+  default = "subnet-04c454d12b060d866"
+  description = "chaiyo-nonprod-app-a"
+}
+
 variable ec2_instance_type {
   type        = string
   default     = "t2.medium"
