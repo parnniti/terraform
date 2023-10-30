@@ -17,7 +17,7 @@ output "for_output_list" {
 # OUTPUT For Loop - with Map
 output "for_output_map" {
     description = "For Loop with Map"
-    value = [for instance in aws_instance.ec2demo: instance.id => instance.private_ip]
+    value = {for instance in aws_instance.ec2demo: instance.id => instance.private_ip}
 }
 
 # OUTPUT For Loop - with Map
